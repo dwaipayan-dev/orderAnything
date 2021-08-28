@@ -168,6 +168,143 @@ app.post('/cartCheckout', async(req, res) =>{
     }
 })
 
+/*Admin APIs*/
+//API to fetch orders according to a filter.
+app.get('/getOrders', async(req, res) =>{
+    try{
+        var Auth = validateJwt(req);
+        if(Auth === 0){
+            res.status(400).send("You are probably not logged in. Login Again!");
+        }
+        else{
+            if(Auth.userType === 'Admin'){
+                let orderStage = req.query.stage;
+                let allOrders = await Order.findAll({
+                    where:{
+                        orderStage: orderStage
+                    },
+                    include:{
+                        model: Item,
+                    }
+                });
+                let allDeliveryPerson = await User.findAll({
+                    attributes:['id', 'username', 'userphone'],
+                    where:{
+                        userType: "Delivery Man"
+                    }
+                })
+                res.status(200).send({msg:"Here is a list of all orders based on order stage followed by all delivery men", orders: allOrders, deliverers: allDeliveryPerson});
+            }
+            else{
+                res.status(400).send("You are not authorized to use this service.");
+            }
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+//API for Admin to assign delivery person
+app.post('/assignDeliverer', async(req, res)=>{
+    try{
+        var Auth = validateJwt(req);
+        if(Auth === 0){
+            res.status(400).send("You are probably not logged in. Login Again!");
+        }
+        else{
+            if(Auth.userType === 'Admin'){
+                let deliverId = req.body.deliverId;
+                let deliverer = await User.findOne({
+                    where:{
+                        id: deliverId
+                    }
+                });
+                let orderId = req.body.orderId;
+                let order = await Order.findOne({
+                    where:{
+                        id: orderId
+                    }
+                });
+                await deliverer.addDelivery(order);
+                res.status(200).send(deliverer.username + " is assigned to Order " + orderId);
+            }
+            else{
+                res.status(400).send("You are not authorized to use this service.");
+            }
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+/*Delivery Man APIs*/
+//API to watch orders assigned and status of those orders
+app.get('/getDeliveries', async(req, res)=>{
+    try{
+        var Auth = validateJwt(req);
+        if(Auth === 0){
+            res.status(400).send("You are probably not logged in. Login Again!");
+        }
+        else{
+            if(Auth.userType === 'Delivery Man'){
+                let delivererId = Auth.userId;
+                let deliveries = await Order.findAll({
+                    attributes: ['id', 'orderStage'],
+                    where:{
+                        delivererId: delivererId
+                    },
+                    include:{
+                        model: Item,
+                        through:{
+                            attributes: ['quantity', 'pickupLocation']
+                        }
+                    }
+                });
+                res.status(200).send(deliveries);
+
+            }
+            else{
+                res.status(400).send("You are not authorized to use this service.");
+            }
+        }
+    }
+    catch(err){
+        console.log(err);
+    } 
+})
+
+//API to update order status based on order ID:
+app.post('/updateStatus', async(req, res)=>{
+    try{
+        var Auth = validateJwt(req);
+        if(Auth === 0){
+            res.status(400).send("You are probably not logged in. Login Again!");
+        }
+        else{
+            if(Auth.userType === 'Delivery Man'){
+                let orderId = req.body.orderId;
+                let statusUpdate = req.body.statusUpdate;
+                let order = await Order.findOne({
+                    where:{
+                        id: orderId
+                    }
+                });
+                order.orderStage = statusUpdate;
+                await order.save();
+                res.status(200).send("Order status updated!!");
+            }
+            else{
+                res.status(400).send("You are not authorized to use this service.");
+            }
+        }
+    }
+    catch(err){
+        console.log(err);
+    }     
+})
+
 app.listen(PORT, ()=>{
     console.log("Server listening on PORT " + PORT)
     sequelize.authenticate().then(()=>{
@@ -180,14 +317,20 @@ app.listen(PORT, ()=>{
 });
 
 function validateJwt(req){
-    const AuthToken = req.cookies.Authorization;
+    const AuthToken = req.cookies.Authorization || req.query.auth;
     if(!AuthToken){
         return 0;
     }
     else{
-        let decoded = jwt.verify(AuthToken, SECRET);
-        return decoded;
+        try{
+            let decoded = jwt.verify(AuthToken, SECRET);
+            return decoded;
+        }
+        //if JWT expires
+        catch(err){
+            //console.log(err);
+            return 0;
+        }
+        
     }
-    
-
 }
