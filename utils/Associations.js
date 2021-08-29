@@ -16,9 +16,9 @@ var associate = async () =>{
 
     Item.belongsToMany(Order, { through: OrderItem});
     Order.belongsToMany(Item, { through: OrderItem})
+    
     try{
-        await sequelize.sync();//{force: true});
-        /*
+        await sequelize.sync({alter: true});//{force: true});
         //Testing if User is working
         await User.create({
             userphone: "8628065854",
@@ -32,6 +32,7 @@ var associate = async () =>{
             itemName: "Chips",
             itemCategory: "Food & Beverages"
         });
+
         let address1 = await Address.create({
             address: "24x7 Sector 54, Gurgaon, Lat - 12.21, Long - 28.72"
         });
@@ -46,7 +47,7 @@ var associate = async () =>{
         let order = await Order.create({
             orderStage: "Task Created"
         });
-        
+
         let customer = await User.create({
             userphone: "8628065754",
             username: "Shah Raj",
@@ -64,7 +65,7 @@ var associate = async () =>{
         await customer.addRequest(order);
         await deliverer.addDelivery(order, {as: 'Deliverer', foreignKey: 'delivererId'});
         console.log("Order Synced successfully");
-        
+
         //testing if orderItems is working
         await order.addItem(item, {through: {
             quantity: 5
@@ -76,7 +77,7 @@ var associate = async () =>{
         await order1.addItem(item, {through: {
             quantity: 7
         }});
-        */
+        
         let databases = {
             user: User,
             item: Item,
@@ -85,7 +86,7 @@ var associate = async () =>{
             order: Order,
             orderItem: OrderItem
         }
-        /*
+        
         await databases.user.create({
             userphone: "8628065859",
             username: "Dwaipayan Mahendra",
@@ -100,12 +101,13 @@ var associate = async () =>{
         }
         });
         console.log(oldUser);
-        */
+        
         return(databases);
     } 
     catch(err){
         console.log(err);
     }
+    
 };
 
 module.exports = associate;

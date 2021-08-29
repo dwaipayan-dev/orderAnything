@@ -10,7 +10,8 @@ const Address = sequelize.define('Address', {
     },
     address:{
         type:Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     }
 },{
     timestamps: false

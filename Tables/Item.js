@@ -10,7 +10,8 @@ const Item = sequelize.define('Item', {
     },
     itemName:{
         type:Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     itemCategory:{
         type: Sequelize.STRING,

@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const sequelize = require('./utils/connection');
 
 const associate = require('./utils/Associations');
@@ -18,11 +20,14 @@ const app = express();
 
 //extensions to parse json encoded and urlencoded req body
 //Note To self: Always remember to put all the use() as soon as we define the app variable. Doesn't work otherwise
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
-const PORT = 8082;
+const PORT = process.env.NODE_DOCKER_PORT || 8082;
+
+//Secret code for JWT
 const SECRET = "Silent"
 
 //Signup API
@@ -334,3 +339,4 @@ function validateJwt(req){
         
     }
 }
+

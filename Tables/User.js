@@ -10,7 +10,8 @@ const User = sequelize.define('User', {
     },
     userphone:{
         type: Sequelize.BIGINT(10),
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     username:{
         type: Sequelize.STRING,
