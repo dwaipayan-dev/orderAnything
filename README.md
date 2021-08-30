@@ -18,7 +18,9 @@ Api to help customer order anything and have it delivered. I would like to thank
  4. Wait for some time for the database to set up. A message database is ready would pop up.
  5. Now you are ready to send requests. The server would run on 6868 if using docker or you may run the application locally on port 8082 with mysql running on port 3308 with database 'orderdb'
 
-# Importing the database
+# Importing the database (optional)
+
+This step is optional as the app on itself sets up a rudimentary database with a few values. But if you are importing a bigger database from dump( eg. Order_db.sql ) follow the steps given below.
 
  1. In the terminal, navigate inside your project. then type:
     ```
