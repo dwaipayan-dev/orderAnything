@@ -101,11 +101,12 @@ var associate = async () =>{
         }
         });
         console.log(oldUser);
-        
+        console.log("Database is ready");
         return(databases);
     } 
     catch(err){
         console.log(err);
+        console.log("If it is Database duplication error. Ignore it, Database is ready.");
     }
     
 };
