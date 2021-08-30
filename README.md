@@ -31,7 +31,7 @@ This step is optional as the app on itself sets up a rudimentary database with a
     ```
     docker exec -i orderanything_mysqldb_1 mysql -uroot -proot orderdb < orderdb_dump.sql
     ```
- NOTE: Remember to remove the following snippets from ./utils/Associations.js, else it will give duplication error. After removing the snippets remove docker images of mysql and orderanything_app(if any present from previous setup) and setup the project again. <br/>
+ NOTE: Remember to remove the following snippets from ./utils/Associations.js, else it will give duplication error with order_db dump. After removing the snippets remove docker images of mysql and orderanything_app(if any present from previous setup) and setup the project again. <br/>
  
  Snippet 1
  
