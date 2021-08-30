@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "5982423e-faed-4f43-bea1-1688269ef690",
+		"name": "orderAny",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test1_Register",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userPhone\": \"8457932165\", \r\n    \"userName\": \"Kumarika\", \r\n    \"userPassword\": \"Sage\", \r\n    \"userType\": \"Customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjoiODQ1NzkzMjE2NSIsImlhdCI6MTYzMDA0MDc0MiwiZXhwIjoxNjMwMDQ3OTQyfQ.1F32rDCXOx6zy_j_mzMkXwCFMS7b5Sc2AP6tSck4Gzc; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "392"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"188-y9eh+9XvfsjPa/m6In/mIvQr47E\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 Aug 2021 05:05:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 5,\n        \"userphone\": \"8457932165\",\n        \"username\": \"Kumarika\",\n        \"userpassword\": \"Sage\",\n        \"userType\": \"Customer\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjoiODQ1NzkzMjE2NSIsImlhdCI6MTYzMDA0MDc0MiwiZXhwIjoxNjMwMDQ3OTQyfQ.1F32rDCXOx6zy_j_mzMkXwCFMS7b5Sc2AP6tSck4Gzc\",\n    \"message\": \"User created Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Test1_Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userPhone\": \"8457932165\",  \r\n    \"userPassword\": \"Sage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjo4NDU3OTMyMTY1LCJpYXQiOjE2MzAwNDA3ODMsImV4cCI6MTYzMDA0Nzk4M30.vx5lMBw-WOUPn6HUAwIe6pKq48g1J4yx3AYXRgog3Rg; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "389"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"185-64fC/t7BpKCzy1IgO+LeJC5Pmpc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 Aug 2021 05:06:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 5,\n        \"userphone\": 8457932165,\n        \"username\": \"Kumarika\",\n        \"userpassword\": \"Sage\",\n        \"userType\": \"Customer\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjo4NDU3OTMyMTY1LCJpYXQiOjE2MzAwNDA3ODMsImV4cCI6MTYzMDA0Nzk4M30.vx5lMBw-WOUPn6HUAwIe6pKq48g1J4yx3AYXRgog3Rg\",\n    \"message\": \"User Logged In Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Test2_Login as Deliveryman",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userPhone\": \"8457932165\",  \r\n    \"userPassword\": \"Sage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjo4NDU3OTMyMTY1LCJpYXQiOjE2MzAwNDA3ODMsImV4cCI6MTYzMDA0Nzk4M30.vx5lMBw-WOUPn6HUAwIe6pKq48g1J4yx3AYXRgog3Rg; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "389"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"185-64fC/t7BpKCzy1IgO+LeJC5Pmpc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 Aug 2021 05:06:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 5,\n        \"userphone\": 8457932165,\n        \"username\": \"Kumarika\",\n        \"userpassword\": \"Sage\",\n        \"userType\": \"Customer\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJ1c2VyTmFtZSI6Ikt1bWFyaWthIiwidXNlclBob25lIjo4NDU3OTMyMTY1LCJpYXQiOjE2MzAwNDA3ODMsImV4cCI6MTYzMDA0Nzk4M30.vx5lMBw-WOUPn6HUAwIe6pKq48g1J4yx3AYXRgog3Rg\",\n    \"message\": \"User Logged In Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Test1_CartCheckout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_CartCheckout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"itemName\": \"Chips\",\r\n    \"quantity\": \"10\"\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/cartCheckout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"cartCheckout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18-DenldohxwAU0Z04+J+LMqM6slBY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 Aug 2021 05:08:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Order added Successfully"
+				}
+			]
+		},
+		{
+			"name": "Test1_GetOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Get_Orders_example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/getOrders?stage=Task Created&auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJUeXBlIjoiQWRtaW4iLCJ1c2VyTmFtZSI6IkR3YWlwYXlhbiIsInVzZXJQaG9uZSI6ODYyODA2NTg1NCwiaWF0IjoxNjMwMTYxODg3LCJleHAiOjE2MzAxNjkwODd9.cL6GwvfmI6ieQy1XDI80An7shfLSY3Mf7ZPXwgpkOQA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"getOrders"
+							],
+							"query": [
+								{
+									"key": "stage",
+									"value": "Task Created"
+								},
+								{
+									"key": "auth",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJUeXBlIjoiQWRtaW4iLCJ1c2VyTmFtZSI6IkR3YWlwYXlhbiIsInVzZXJQaG9uZSI6ODYyODA2NTg1NCwiaWF0IjoxNjMwMTYxODg3LCJleHAiOjE2MzAxNjkwODd9.cL6GwvfmI6ieQy1XDI80An7shfLSY3Mf7ZPXwgpkOQA"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1543"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"607-i78kALQtvh014cfw+j9zg6hQAaU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Aug 2021 15:12:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Here is a list of all orders based on order stage followed by all delivery men\",\n    \"orders\": [\n        {\n            \"id\": 1,\n            \"orderStage\": \"Task Created\",\n            \"customerId\": 2,\n            \"delivererId\": 3,\n            \"Items\": [\n                {\n                    \"id\": 1,\n                    \"itemName\": \"Chips\",\n                    \"itemCategory\": \"Food & Beverages\",\n                    \"OrderItem\": {\n                        \"id\": 1,\n                        \"quantity\": 5,\n                        \"pickupLocation\": null,\n                        \"ItemId\": 1,\n                        \"OrderId\": 1\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"orderStage\": \"Task Created\",\n            \"customerId\": 2,\n            \"delivererId\": null,\n            \"Items\": [\n                {\n                    \"id\": 1,\n                    \"itemName\": \"Chips\",\n                    \"itemCategory\": \"Food & Beverages\",\n                    \"OrderItem\": {\n                        \"id\": 2,\n                        \"quantity\": 7,\n                        \"pickupLocation\": null,\n                        \"ItemId\": 1,\n                        \"OrderId\": 2\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"orderStage\": \"Task Created\",\n            \"customerId\": 2,\n            \"delivererId\": null,\n            \"Items\": [\n                {\n                    \"id\": 1,\n                    \"itemName\": \"Chips\",\n                    \"itemCategory\": \"Food & Beverages\",\n                    \"OrderItem\": {\n                        \"id\": 3,\n                        \"quantity\": 10,\n                        \"pickupLocation\": \"24x7 Sector 54, Gurgaon, Lat - 12.21, Long - 28.72\",\n                        \"ItemId\": 1,\n                        \"OrderId\": 3\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"itemName\": \"Dispirin\",\n                    \"itemCategory\": \"Pharmaceutical\",\n                    \"OrderItem\": {\n                        \"id\": 4,\n                        \"quantity\": 5,\n                        \"pickupLocation\": \"M Bazaar, Sector 34, Gurgaon, Lat - 12.26, Long - 28.75\",\n                        \"ItemId\": 2,\n                        \"OrderId\": 3\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"orderStage\": \"Task Created\",\n            \"customerId\": 2,\n            \"delivererId\": null,\n            \"Items\": [\n                {\n                    \"id\": 1,\n                    \"itemName\": \"Chips\",\n                    \"itemCategory\": \"Food & Beverages\",\n                    \"OrderItem\": {\n                        \"id\": 5,\n                        \"quantity\": 10,\n                        \"pickupLocation\": \"24x7 Sector 54, Gurgaon, Lat - 12.21, Long - 28.72\",\n                        \"ItemId\": 1,\n                        \"OrderId\": 4\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"itemName\": \"Dispirin\",\n                    \"itemCategory\": \"Pharmaceutical\",\n                    \"OrderItem\": {\n                        \"id\": 6,\n                        \"quantity\": 5,\n                        \"pickupLocation\": \"Big Bazaar, Sector 25, Gurgaon, Lat - 12.23, Long - 28.79\",\n                        \"ItemId\": 2,\n                        \"OrderId\": 4\n                    }\n                }\n            ]\n        }\n    ],\n    \"deliverers\": [\n        {\n            \"id\": 3,\n            \"username\": \"Kaamraan\",\n            \"userphone\": 5586412345\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Test3_Login as Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test3_Login as Admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userPhone\": \"8628065854\",  \r\n    \"userPassword\": \"Dashhh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJUeXBlIjoiQWRtaW4iLCJ1c2VyTmFtZSI6IkR3YWlwYXlhbiIsInVzZXJQaG9uZSI6ODYyODA2NTg1NCwiaWF0IjoxNjMwMTYxODg3LCJleHAiOjE2MzAxNjkwODd9.cL6GwvfmI6ieQy1XDI80An7shfLSY3Mf7ZPXwgpkOQA; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"182-XYfMx2DKmxs0riBZ+v57Aa1RkfE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Aug 2021 14:44:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"userphone\": 8628065854,\n        \"username\": \"Dwaipayan\",\n        \"userpassword\": \"Dashhh\",\n        \"userType\": \"Admin\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJUeXBlIjoiQWRtaW4iLCJ1c2VyTmFtZSI6IkR3YWlwYXlhbiIsInVzZXJQaG9uZSI6ODYyODA2NTg1NCwiaWF0IjoxNjMwMTYxODg3LCJleHAiOjE2MzAxNjkwODd9.cL6GwvfmI6ieQy1XDI80An7shfLSY3Mf7ZPXwgpkOQA\",\n    \"message\": \"User Logged In Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Test1_Assign Deliverer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_Assign Deliverer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"2\",\r\n    \"deliverId\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/assignDeliverer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"assignDeliverer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-TAyOYG2oIf8CxCuR1W2MyxBTchA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Aug 2021 16:35:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Kaamraan is assigned to Order 2"
+				}
+			]
+		},
+		{
+			"name": "Test1_Get Deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_Get Deliveries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/getDeliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"getDeliveries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "689"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b1-F/hIBC/S5We3nbhwyCBYJv6uPb0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Aug 2021 17:23:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"orderStage\": \"Task Created\",\n        \"Items\": [\n            {\n                \"id\": 1,\n                \"itemName\": \"Chips\",\n                \"itemCategory\": \"Food & Beverages\",\n                \"OrderItem\": {\n                    \"quantity\": 5,\n                    \"pickupLocation\": null\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"orderStage\": \"Task Created\",\n        \"Items\": [\n            {\n                \"id\": 1,\n                \"itemName\": \"Chips\",\n                \"itemCategory\": \"Food & Beverages\",\n                \"OrderItem\": {\n                    \"quantity\": 7,\n                    \"pickupLocation\": null\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"orderStage\": \"Task Created\",\n        \"Items\": [\n            {\n                \"id\": 1,\n                \"itemName\": \"Chips\",\n                \"itemCategory\": \"Food & Beverages\",\n                \"OrderItem\": {\n                    \"quantity\": 10,\n                    \"pickupLocation\": \"24x7 Sector 54, Gurgaon, Lat - 12.21, Long - 28.72\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"itemName\": \"Dispirin\",\n                \"itemCategory\": \"Pharmaceutical\",\n                \"OrderItem\": {\n                    \"quantity\": 5,\n                    \"pickupLocation\": \"M Bazaar, Sector 34, Gurgaon, Lat - 12.26, Long - 28.75\"\n                }\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Test1_update Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Test1_update Status",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"3\",\r\n    \"statusUpdate\": \"Reached Store\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/updateStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"updateStatus"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-I2u9LRsuzWW3TT1UwCQGttVufOI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Aug 2021 17:54:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Order status updated!!"
+				}
+			]
+		}
+	]
+}
