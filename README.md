@@ -112,7 +112,10 @@ Api to help customer order anything and have it delivered. I would like to thank
         });
         console.log(oldUser);
  ```
- 
+
+# Importing Postman
+
+Open Postman, click on import from a collection. Then select the postman collection file on this repo. All the requests and examples would be imported.
 
 # Usage:
 
